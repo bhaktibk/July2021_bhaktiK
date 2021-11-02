@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.organgeHRM.pages.LoginPage;
 import com.organgeHRM.pages.Menu_page;
@@ -46,24 +47,34 @@ public class PIM_AddEmployeeTest {
 		Assert.assertEquals(actuText, expected);
 		System.out.println("User land on Add employee");
 		System.out.println("Step- enter Add employee details");
-	
+		String name= "Palavi";
 		System.out.println("Step- First name, Last Name, location ");
 		pim_AddEmployeePage
-		.setFn("Abhi")
+		.setFn(name)
 		.setLn("bhakti")
 		.setLocation("Australian Regional HQ")
 		 .clickOnNextButon()
 		 .setHobbites("Reading")
 		 .clickOnNextButon()
 		 .setWorkShift("General")
-		 .setRegion("Region-1");
+		 .setRegion("Region-1")
+		 .setFET("0.75")
+		 .setTemporaryDep("Sub unit-1")
+		 .saveButtonClick_1();
+		
+		 System.out.println("Step - Employee Get added Successfully");
+		 System.out.println("Strp- go to Employee list screen");
+		 SoftAssert softAssert= new  SoftAssert();
+		 Boolean flag= true;
+		 Boolean actual = pim_AddEmployeePage.isTextVisisble();
+		 softAssert.assertEquals(actual, flag);
+		 softAssert.assertAll();
 		 
 		 
-		
-		 
-		
-		
 	}
+	
+	
+	
 	
 
 }
