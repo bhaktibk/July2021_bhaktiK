@@ -20,7 +20,7 @@ public class LoginPage extends Predefined {
 		return driver.findElement(By.xpath("//ul/li[@class='page-title']")).getText();
 	}
 	public void clickOnLoginButton() {
-		clickOnButton("Submit");
+		clickOnButton("//input[@value='LOGIN']");
 	}
 	
 	
