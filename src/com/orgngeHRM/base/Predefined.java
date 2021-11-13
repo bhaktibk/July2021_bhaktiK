@@ -4,7 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Predefined {
 	protected  static WebDriver driver;
@@ -19,8 +22,12 @@ public class Predefined {
 		
 		
 	}
-	static protected void clickOnButton(String name){
-		driver.findElement(By.name(name)).click();
+	static protected void clickOnButton(String locator){
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		
+		//WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Next']")));
+		WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+		button.click();
 	}
 	
 	static public void windowsQuit() {
