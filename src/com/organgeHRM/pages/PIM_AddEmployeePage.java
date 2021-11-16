@@ -13,12 +13,10 @@ public class PIM_AddEmployeePage extends Predefined {
 
 	public void clickOnPIM() {
 		driver.findElement(By.xpath("//a/span[text()='PIM']")).click();
-
 	}
 
 	public void clickOnPIM_EmployeeList() {
 		driver.findElement(By.xpath("//a/span[text()='Employee List']")).click();
-
 	}
 
 	public void clickOnPIM_AddRecipient() {
@@ -30,20 +28,17 @@ public class PIM_AddEmployeePage extends Predefined {
 	}
 
 	public PIM_AddEmployeePage setFn(String fn) {
-
 		driver.findElement(By.xpath("//input[@id='first-name-box']")).sendKeys(fn);
 		return this;
 	}
 
 	public PIM_AddEmployeePage setLn(String ln) {
-
 		driver.findElement(By.xpath("//input[@id='last-name-box']")).sendKeys(ln);
 		return this;
 	}
 
 	// Canadian Development Center
 	public PIM_AddEmployeePage setLocation(String location) {
-
 		driver.findElement(By.xpath("//button[@class='btn dropdown-toggle']")).click();
 		driver.findElement(By.xpath("//span[text()='" + location + "']//parent::a")).click();
 		return this;
@@ -91,11 +86,11 @@ public class PIM_AddEmployeePage extends Predefined {
 	}
 
 	public PIM_AddEmployeePage setRegion(String region) {
-		 
+
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement regionDropDown = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("//label[text()='Region']/preceding-sibling::div/input")));
-		
+
 		regionDropDown.click();
 
 		WebElement regionElement = wait
