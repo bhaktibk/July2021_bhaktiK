@@ -24,7 +24,6 @@ public class Predefined {
 	}
 	static protected void clickOnButton(String locator){
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		
 		//WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Next']")));
 		WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 		button.click();
@@ -33,5 +32,7 @@ public class Predefined {
 	static public void windowsQuit() {
 		driver.quit();
 	}
+	
+	
 
 }

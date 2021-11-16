@@ -44,10 +44,11 @@ public class PIM_AddEmployeeTest {
 	}
 
 	@DataProvider(name = "empData")
-
-	Object[][] getDataFromXls() throws Throwable {
+	//Object[][] 
+	void getDataFromXls() throws Throwable {
 		System.out.println("Data provided method gets called successfully ");
-		return ExcelData.getTableData();
+		//return 
+		ExcelData.getTableData();
 	}
 
 	@Test(dataProvider = "empData")
